@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate
+Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost/hibernateciclistas</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password"></property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- para ver las consultas-->
+        <property name="hibernate.show_sql">true</property>
+        <!-- para q nos haga las tablas-->
+        <property name="hbm2ddl.auto">update</property>
+
+        <mapping resource="Hibernate/xmlMapping/Ciclista.hbm.xml"/>
+        <mapping class="Hibernate.entity.Ciclista"/>
+
+        <mapping resource="Hibernate/xmlMapping/Equipo.hbm.xml"/>
+        <mapping class="Hibernate.entity.Equipo"/>
+
+        <mapping resource="Hibernate/xmlMapping/Palmares.hbm.xml"/>
+        <mapping class="Hibernate.entity.Palmares"/>
+
+
+    </session-factory>
+</hibernate-configuration>

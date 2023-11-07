@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Hibernate.entity.Ciclista">
+        <id name="id" column="id" type="integer"/>
+        <property name="nombre"/>
+        <property name="apellidos"/>
+
+        <!-- 1 a 1 -->
+        <one-to-one name="palmares" cascade="all"/>
+
+        <!-- Many to one, N a 1-->
+        <many-to-one name="equipo">
+            <column name="idEquipo"/> <!-- Aqui ponemos la clave ajena-->
+        </many-to-one>
+
+    </class>
+</hibernate-mapping>
